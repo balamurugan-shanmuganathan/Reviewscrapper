@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block head %}   
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+    
+    <div class = 'table-users'>
+
+        <table cellspacing="0"> 
+            <tr>
+                <th>Product</th>
+                <th>Product Image</th>
+                <th>Product Name</th>
+                <th>Rating</th>
+                <th>Price</th>
+                <th>Offer</th>
+                <th>Offer Price</th>
+                <th>Highlights</th>
+            </tr>
+            {% for result in results %}
+                <tr>                
+                    <td>{{ result['Product'] }}</td>
+                    <td><img src="{{result['Image']}}" alt="name"/> </td>                    
+                    <td>{{ result['Name'] }}</td>
+                    <td>{{ result['Rating'] }}</td>
+                    <td>{{ result['Price'] }}</td>
+                    <td>{{ result['Offer'] }}</td>
+                    <td>{{ result['OfferPrice'] }}</td>
+                    <td>{{ result['Highlights'] }}</td>
+                </tr>            
+            {% endfor %}
+        </table>
+
+
+    </div>
+
+{% endblock %}
