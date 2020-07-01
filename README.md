@@ -4,13 +4,16 @@
   * Demo
   * Overview
   * Technical Aspect
+  * Libraries
   * Installation
   * Run
   * Deployement on Heroku
   * Directory Tree
 
 ### Demo
-Link: https://reviewscrapper-flipkart.herokuapp.com/
+Link: https://reviewscrapper-flipkart.herokuapp.com
+
+![Demo](Demo/reviewscrapper_demo.gif)
 
 ### Overview
 Webscrap is the process of extracting or scraping data from website.The data on the websites are unstructured. Web scraping helps collect these unstructured data and store it in a structured form. 
@@ -23,6 +26,12 @@ Beautiful Soup is a Python library for pulling data out of HTML.
 This project is dividing into two part
   1. parsing data with help of Beautifulsoup
   2. Building and hosting a Flask web app on Heroku.
+  
+### Libraries
+  * bs4
+  * requests
+  * flask
+  * pandas
   
 ### Installation
 As always ensure you create a virtual environment for this application and install the necessary libraries from the requirements.txt file.
