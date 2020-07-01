@@ -7,9 +7,10 @@
   * Installation
   * Run
   * Deployement on Heroku
-  
+  * Directory Tree
+
 ### Demo
-Link: https://flipkart-product-heroku.herokuapp.com/
+Link: https://reviewscrapper-flipkart.herokuapp.com/
 
 ### Overview
 Webscrap is the process of extracting or scraping data from website.The data on the websites are unstructured. Web scraping helps collect these unstructured data and store it in a structured form. 
@@ -27,19 +28,37 @@ This project is dividing into two part
 As always ensure you create a virtual environment for this application and install the necessary libraries from the requirements.txt file.
 
     $ virtualenv venv
- 
-    $ source venv/bin/activate
- 
+    $ .\env\scripts\activate.bat
     $ pip install -r requirements.txt
 
 ### Run
 
-    $ python run.py
+    $ python app.py
 
 ### Deployement on Heroku
 
-Follow the instruction given on Heroku Documentation to deploy a web app.
+Follow the instruction given on [Heroku](https://devcenter.heroku.com/articles/git) Documentation to deploy a web app.
 
 To run app in heroku below mentioned line should be in Procfile
 
     web: gunicorn app:app
+
+### Directory Tree
+     ├── ReviewScraper 
+     │   ├── ReviewScraper.py
+     ├── static
+     │   ├── flipkartImg
+     |       ├── Image1.jpg 
+     |       ├── Image2.jpg
+     ├── templates
+     │   ├── includes
+     |       ├── _navbar.html
+     │   ├── about.html
+     │   ├── base.html
+     │   ├── index.html
+     │   ├── reviews.html
+     ├── app.py
+     ├── Procfile
+     ├── requirements.txt
+     ├── README.md
+
