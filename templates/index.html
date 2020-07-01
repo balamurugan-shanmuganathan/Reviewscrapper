@@ -12,13 +12,14 @@
         <img src="{{ img1 }}" alt="User Image" width="100" height="100">
         <h1>Reviews Scraper</h1>
     
-        <info>Please paste product url from flipkart.com that you are planning to buy.</info><br><br>
+        <p>Please paste product url from flipkart.com that you are planning to buy.</p>
+        <info>(This tool can't able to parse few product pages. The issue will be fixed in next version.)</info><br><br>
     
         <div class = 'content'>
             <div class = 'form'>
                 <form  style="text-align: center" action = '/Reviews', method = 'POST'>
                     <input class="form-control" type = 'text'  name = 'url' id = 'url'><br>
-                    <info>Enter how many pages you want to scrap</info><br><br>
+                    <info>Enter pages you want to scrap</info><br><br>
                     <input style="text-align: center" type = 'number' min="1"  value = '1' step = '1' name = 'page' id = 'page'><br><br>
                     <input class="btn btn-primary btn-lg" type = 'submit' value = 'Search'>                       
                 </form>
