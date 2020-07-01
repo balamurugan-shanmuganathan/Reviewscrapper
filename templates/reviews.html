@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <div class = 'jumbotron text-center'>
+        <p>{{review_len}}</p>
+    </div>
+
+    <div class="table table-striped w-auto"></div>
+        
+        <h2 class="center" >Product Image</h2>
+        <img src="{{prodImg[0]}}" alt="name"/>
+
+        <h2>Product Information</h2>
+            {{ prodInfo.drop('Image', axis = 1).to_html(classes="table table-striped w-auto") | safe}}
+
+        <h2>Reviews</h2>
+            {{ reviews.to_html(classes="table table-striped w-auto") | safe}}
+    </div>
+{% endblock %}
+
+
