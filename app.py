@@ -12,7 +12,7 @@ def index():
 
 @app.route('/about')
 def about():
-    img2 = os.path.join('static','flipkartImg', 'Image2.jpg')
+    img2 = os.path.join('static','flipkartImg', 'Image2.JPG')
     return render_template('about.html', img2 = img2)
 
 @app.route('/Reviews', methods = ['GET','POST'])
