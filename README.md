@@ -16,7 +16,7 @@ Link: https://reviewscrapper-flipkart.herokuapp.com
 ![Demo](Demo/reviewscrapper_demo.gif)
 
 ### Overview
-Webscrap is the process of extracting or scraping data from website.The data on the websites are unstructured. Web scraping helps collect these unstructured data and store it in a structured form. 
+Webscrape is the process of extracting or scraping data from website.The data on the websites are unstructured. Web scraping helps collect these unstructured data and store it in a structured form. 
 
 In this project, we try to scrap the reviews from **Flipkart.com** about the product that we are planning to buy. Our end goal is to build a web scraper that collects the reviews of a product from the internet.
 
