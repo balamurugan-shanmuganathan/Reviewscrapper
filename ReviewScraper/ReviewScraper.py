@@ -17,13 +17,13 @@ class reviewScraper:
     
     def prodInformation(soup):
         try:
-            prodImage = str(soup.find('div', {'class': '_2_AcLJ'})).split('(')[1].replace(')"></div>','')
-            prodName = soup.find_all('span', {'class':'_35KyD6'})[0].text
-            prodRating = soup.find('div', {'class':'hGSR34'}).text
-            prodPrice = soup.find_all('div', {'class':'_1vC4OE _3qQ9m1'})[0].text
-            highlights = soup.find('div', {'class' : '_3WHvuP'})
+            prodImage = str(soup.find('div', {'class': '_2E1FGS'})).split('\"')[5]
+            prodName = soup.find_all('span', {'class':'B_NuCI'})[0].text
+            prodRating = soup.find('div', {'class':'_3LWZlK'}).text
+            prodPrice = soup.find_all('div', {'class':'_30jeq3 _16Jk6d'})[0].text
+            highlights = soup.find('div', {'class' : '_2cM9lP'})
             prodHighlights = '|'.join([e.text for e in highlights.find_all('li')])
-            prodBox = soup.find('td', {'class' : '_2k4JXJ col col-9-12'}).li.text
+            prodBox = soup.find('td', {'class' : 'URwL2w col col-9-12'}).li.text
 
             mydict = {"Image": prodImage,
                   "Name": prodName,
@@ -38,7 +38,7 @@ class reviewScraper:
     
     def pageLink(soup, pageNum):
         pageLink = []
-        review = soup.find_all('div',{'class':'col _39LH-M'})
+        review = soup.find_all('div',{'class':'col JOpGWq'})
         try:
             for i in range(1,pageNum + 1):
                 link = 'https://www.flipkart.com' + review[0].find_all('a')[-1]['href'] + '&page={}'.format(i)
@@ -58,23 +58,23 @@ class reviewScraper:
                 Html = BeautifulSoup(Link.content, 'html.parser')   
 
                 # Review Parsing from each page
-                for rev in Html.find_all('div',{'class': '_3gijNv col-12-12'}):
+                for rev in Html.find_all('div',{'class': 'col _2wzgFH K0kLPL'}):
                     try:            
-                        rating = rev.find_all('div',{'class' : 'hGSR34 E_uFuv'})[0].text
-                        headLine = rev.find_all('p',{'class' : '_2xg6Ul'})[0].text
-                        comments = rev.find('div', {'class' : 'qwjRop'}).div.div.text
-                        date = rev.find_all('p',{'class' : '_3LYOAd'})[1].text
+                        rating = rev.find_all('div',{'class' : '_3LWZlK _1BLPMq'})[0].text
+                        headLine = rev.find_all('p',{'class' : '_2-N8zT'})[0].text
+                        comments = rev.find('div', {'class' : 't-ZTKy'}).div.div.text
+                        date = rev.find_all('p',{'class' : '_2sc7ZR'})[1].text
                         userReviews.loc[i] = [reviewPage,rating,headLine,comments,date]
                         i+=1
                     except:
                         pass
 
                 # Stop If don't have Next button
-                lenHtml = len(Html.find_all('a' , {'class' : '_3fVaIS'}))    
+                lenHtml = len(Html.find_all('a' , {'class' : '_1LKTO3'}))    
                 if lenHtml == 1:
-                    next_ = Html.find_all('a' , {'class' : '_3fVaIS'})[0].text
+                    next_ = Html.find_all('a' , {'class' : '_1LKTO3'})[0].text
                 else:
-                    next_ = Html.find_all('a' , {'class' : '_3fVaIS'})[1].text  
+                    next_ = Html.find_all('a' , {'class' : '_1LKTO3'})[1].text  
 
                 if next_ == 'Next':
                     reviewPage +=1
